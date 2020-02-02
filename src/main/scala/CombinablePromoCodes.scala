@@ -11,6 +11,15 @@ object CombinablePromoCodes {
       Promotion("P4", Seq("P2")), // P4 is not combinable with P2
       Promotion("P5", Seq("P2")))
     allCombinablePromotions(allPromotions).foreach(println(_))
+    combinablePromotions("P1", allPromotions).foreach(println(_))
+    combinablePromotions("P3", allPromotions).foreach(println(_))
+  }
+
+  def combinablePromotions(
+    promotionCode: String,
+    allPromotions: Seq[Promotion]): Seq[PromotionCombo] = {
+    val promotion = allPromotions.find(_.code == promotionCode).get
+    allCombinablePromotions(allPromotions.filterNot(otherPromotion => promotion.notCombinableWith.contains(otherPromotion.code)))
   }
 
   def allCombinablePromotions(allPromotions: Seq[Promotion]): Seq[PromotionCombo] = {
