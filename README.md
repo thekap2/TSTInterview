@@ -8,7 +8,7 @@ Problem2 is solved in CombinablePromoCodes and is tested in CombinablePromoCodes
  
 build.sbt can be used to build the project.
 
-The test classes use scala test so they can be run with that
+The test classes use scala test so they can be run using scala test
 
 If using command line with sbt the following command can be run from root of the project
  * sbt test
