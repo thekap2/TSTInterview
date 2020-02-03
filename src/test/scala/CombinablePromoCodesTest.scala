@@ -27,22 +27,22 @@ class CombinablePromoCodesTest extends FlatSpec with Matchers {
   "given allCombinablePromotions is passed allPromotions" should "produce expectedResultAllPromotions" in {
     var result = allCombinablePromotions(allPromotions)
     println()
-    println("Expected Output for All Promotion Combinations:")
-    result.foreach(println(_))
+    info("Expected Output for All Promotion Combinations:")
+    result.foreach(combo => info(combo.toString))
     result should be(expectedResultAllPromotions)
   }
 
   "given combinablePromotions is passed P1 and allPromotions" should "produce expectedResultP1" in {
     var result = combinablePromotions("P1", allPromotions)
-    println("Expected Output for Promotion Combinations for promotionCode=”P1”:")
-    result.foreach(println(_))
+    info("Expected Output for Promotion Combinations for promotionCode=”P1”:")
+    result.foreach(combo => info(combo.toString))
     result should be(expectedResultP1)
   }
 
   "given combinablePromotions is passed P3 and allPromotions" should "produce expectedResultP3" in {
     var result = combinablePromotions("P3", allPromotions)
-    println("Expected Output for Promotion Combinations for promotionCode=”P3”:")
-    result.foreach(println(_))
+    info("Expected Output for Promotion Combinations for promotionCode=”P3”:")
+    result.foreach(combo => info(combo.toString))
     result should be(expectedResultP3)
   }
 

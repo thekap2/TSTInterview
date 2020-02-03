@@ -27,8 +27,8 @@ class BestPricesTest extends FlatSpec with Matchers {
 
   "given getBestGroupPrices is passed rates and cabinPrices" should "produce expectedBestGroupPrices" in {
     val result = getBestGroupPrices(rates, cabinPrices)
-    println("Expected Output - Best Cabin Prices:")
-    result.foreach(println(_))
+    info("Expected Output - Best Cabin Prices:")
+    result.foreach(price => info(price.toString))
     result should be(expectedBestGroupPrices)
   }
 
